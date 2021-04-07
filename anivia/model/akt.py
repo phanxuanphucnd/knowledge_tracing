@@ -1,11 +1,11 @@
 import math
 import torch
 import numpy as np
+import torch.nn.functional as F
 
 from anivia import *
 from torch import nn
 from enum import IntEnum
-import torch.nn.functional as F
 from torch.nn.init import constant_, xavier_uniform_
 
 class Dim(IntEnum):
@@ -40,7 +40,7 @@ class AKTModel(nn.Module):
             self.difficult_param = nn.Embedding(self.n_pid+1, 1)
             self.q_embed_diff = nn.Embedding(self.n_question+1, embed_l)
             self.qa_embed_diff = nn.Embedding(2 * self.n_question + 1, embed_l)
-        # n_question+1 ,d_model
+        # n_question+1 ,d_modelg
         self.q_embed = nn.Embedding(self.n_question+1, embed_l)
         if self.separate_qa:
             self.qa_embed = nn.Embedding(2*self.n_question+1, embed_l)

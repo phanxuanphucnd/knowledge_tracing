@@ -1,2 +1,3 @@
-# knowledge_tracing
-Model AKT for Knowledge Tracing
+### ANIVIA
+
+Anivia is a library for Knowledge Tracing task using the AKT architecture.
